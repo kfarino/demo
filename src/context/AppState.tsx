@@ -2,12 +2,16 @@
 
 import React from "react";
 
+type Step = "userDetails" | "healthConditions" | "medications";
+
 type Props = {
 	isConnected: boolean;
+	step?: Step;
 };
 
 const initState: Props = {
 	isConnected: false,
+	step: "userDetails",
 };
 
 const AppStateCtx = React.createContext<Props>(initState);
