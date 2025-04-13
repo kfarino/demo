@@ -53,14 +53,14 @@
   },
   "git": {
     "deploymentEnabled": {
-      "kevin_explore": true
+      "main": true
     },
-    "productionBranch": "kevin_explore"
+    "productionBranch": "main"
   },
   "github": {
     "enabled": true,
     "silent": true,
     "autoAlias": true,
-    "productionBranch": "kevin_explore"
+    "productionBranch": "main"
   }
 } 
