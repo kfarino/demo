@@ -54,13 +54,11 @@
   "git": {
     "deploymentEnabled": {
       "main": true
-    },
-    "productionBranch": "main"
+    }
   },
   "github": {
     "enabled": true,
     "silent": true,
-    "autoAlias": true,
-    "productionBranch": "main"
+    "autoAlias": true
   }
 } 
