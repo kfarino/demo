@@ -7,8 +7,8 @@ import AppStateProvider from "@/context/AppState";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Voice FRE",
-	description: "Voice First Run Experience",
+	title: "Hero Demo",
+	description: "Your Personal Health OS",
 };
 
 export default function RootLayout({
