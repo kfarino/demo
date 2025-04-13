@@ -16,9 +16,8 @@ type MessageType = {
 const Ai: React.FC = () => {
 	const [conversationId, setConversationId] = useState<string | null>(null);
 	const [hasAudioAccess, setHasAudioAccess] = useState(false);
-	const [isSpeaking, setIsSpeaking] = useState(false);
+	const { isSpeaking, startSession } = useConversation();
 	const streamRef = useRef<MediaStream | null>(null);
-	const conversation = useConversation();
 
 	useEffect(() => {
 		if (!process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY) {
@@ -71,7 +70,7 @@ const Ai: React.FC = () => {
 		}
 
 		try {
-			await conversation?.startSession({
+			await startSession({
 				agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || '',
 				onConnect: ({ conversationId: id }) => {
 					console.log("Connected to agent:", id);
@@ -81,17 +80,8 @@ const Ai: React.FC = () => {
 					console.error("Connection error:", message);
 					toast.error("Connection error occurred");
 				},
-				onMessage: (props: MessageType) => {
-					console.log("Message received:", props);
-					if (props.type === 'speech_start') {
-						setIsSpeaking(true);
-					} else if (props.type === 'speech_end') {
-						setIsSpeaking(false);
-					}
-				},
 				onDisconnect: () => {
 					console.log("Disconnected from agent");
-					setIsSpeaking(false);
 					setConversationId(null);
 				}
 			});
