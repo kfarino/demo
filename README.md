@@ -1,6 +1,26 @@
-# Voice FRE (First Run Experience)
+# Demo
 
-A voice-enabled health dashboard application built with Next.js and ElevenLabs.
+This is a Next.js project using:
+- Next.js 15
+- PNPM
+- ElevenLabs Voice AI
+- Vercel Deployment
+
+## Getting Started
+
+First, install dependencies:
+
+```bash
+pnpm install
+```
+
+Then, run the development server:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Features
 
