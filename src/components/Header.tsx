@@ -33,14 +33,11 @@ const Header: React.FC<HeaderProps> = ({ isSpeaking }) => {
             
             <div className="max-w-3xl mx-auto">
                 <h3 className="text-xl font-semibold mb-4 text-white/90 text-center">Suggestions</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {suggestedPrompts.map((prompt, index) => (
                         <div
                             key={index}
-                            className="p-3 rounded-lg bg-black border border-[#F26C3A]/20 
-                                     text-[#F26C3A] text-sm cursor-pointer 
-                                     hover:bg-[#F26C3A]/10 hover:border-[#F26C3A]/30 
-                                     transition-all duration-200"
+                            className="text-[#F26C3A] text-sm text-center"
                         >
                             {prompt}
                         </div>
